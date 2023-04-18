@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\Ejercicios1\\Ejercicios1\\Ejercicios1.csproj": {}
+    "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EjerciciosClase\\Ejercicios1\\Ejercicios1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\Ejercicios1\\Ejercicios1\\Ejercicios1.csproj": {
+    "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EjerciciosClase\\Ejercicios1\\Ejercicios1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\Ejercicios1\\Ejercicios1\\Ejercicios1.csproj",
+        "projectUniqueName": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EjerciciosClase\\Ejercicios1\\Ejercicios1.csproj",
         "projectName": "Ejercicios1",
-        "projectPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\Ejercicios1\\Ejercicios1\\Ejercicios1.csproj",
+        "projectPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EjerciciosClase\\Ejercicios1\\Ejercicios1.csproj",
         "packagesPath": "C:\\Users\\Santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\Ejercicios1\\Ejercicios1\\obj\\",
+        "outputPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EjerciciosClase\\Ejercicios1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

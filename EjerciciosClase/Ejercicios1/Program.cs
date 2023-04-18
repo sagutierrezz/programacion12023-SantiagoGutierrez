@@ -1,17 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// 3- El usuario ingresará una lista de nombre de persona, cuando se ingresé un nombre vacío, sin datos;
+////////////////////////-------------------------WHILE--------------------------///////////////////////-------------------
+
+
+// 4- Para calcular el total de una factura , el usuario ingresará pares de datos Costo y Total
+//; cuando se ingrese costo 0 finaliza el ingreso de datos; informar el total adeudado.
+
+
+//3- El usuario ingresará una lista de nombre de persona, cuando se ingresé un nombre vacío, sin datos;
 //el sistema informará cuántos nombres se han ingresado.
 
+/*
+string nombre = null;
+int contador = 0;
 
+Console.WriteLine("Ingresa el nombre de una persona");
 
-
-
-
-
-
-
-
+while (nombre != "")
+{
+    nombre = Console.ReadLine();
+    
+    if (nombre != "")
+    {
+        contador++;
+    }
+}
+Console.WriteLine($"Ingresaste un total de {contador} " );
+*/
 
 
 
@@ -47,7 +62,7 @@ while (numeroEntero > 0)
 }
 */
 
-//  ----------WHILE----------
+
 //1 - El usuario ingresará valores positivos, cuando no tenga más valores ingresará 0 (cero)
 //El sistema deberá informar la suma de los ingresados
 
@@ -80,7 +95,7 @@ while (numeroEntero > 0)
 
 
 //-----------------------------------------------------------------------------------------------------------------------------//
-
+///////////////////// --------------------------DO WHILE-------------------------------------------------------////////////////
 //5-Siguiendo con el ejercicio anterior, al ingresar uno mayor o menor a 3 cifras se mostrará el promedio de los ingresados. 
 /*
 Console.WriteLine("Ingresa un numero");
