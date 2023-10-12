@@ -1,4 +1,5 @@
 ﻿using Back.ConexionBD;
+using Back.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace Back.Clases
     public class Principal
     {
         ApplicationDbContext context = new ApplicationDbContext();
+
+        public List<Cliente> DevolverListaClientes()
+        {
+            return context.Clientes.ToList();
+        }
         public void AgregarCliente(Cliente cliente)
         {
             
@@ -23,12 +29,22 @@ namespace Back.Clases
             context.SaveChanges();
         }
 
+        public List<CuentaBancaria> DevolverListaCuentaBancaria()
+        {
+            return context.CuentasBancarias.ToList();
+        }
         public void CrearCuentaBancaria(CuentaBancaria cuenta)
         {
             
             context.CuentasBancarias.Add(cuenta);
             context.SaveChanges();
             
+        }
+
+        public void EliminarCuentaBancaria(CuentaBancaria cuenta)
+        {
+            context.CuentasBancarias.Remove(cuenta);
+            context.SaveChanges();
         }
 
         public void EmitirTarjetaCredito(TarjetaCredito tarjeta)
@@ -61,7 +77,7 @@ namespace Back.Clases
             using (var context = new ApplicationDbContext())
             {
                 // Consulta LINQ (ver si la condicion pasada es correcta y si ta bien, o adaptar una condicion segun la db)
-                var cuentaBancaria = context.CuentasBancarias.FirstOrDefault(cb => cb.Id == cuentaBancariaId);
+                var cuentaBancaria = context.CuentasBancarias.FirstOrDefault(cb => cb.IdCuenta == cuentaBancariaId);
 
                 if (cuentaBancaria != null)
                 {
@@ -75,11 +91,11 @@ namespace Back.Clases
         {
             using (var context = new ApplicationDbContext())
             {
-                var cuentaBancaria = context.CuentasBancarias.FirstOrDefault(cb => cb.Id == cuentaBancariaId);
+                var cuentaBancaria = context.CuentasBancarias.FirstOrDefault(cb => cb.IdCuenta == cuentaBancariaId);
 
                 if (cuentaBancaria != null)
                 {
-                    // Si el saldo es mayor a la extraccion
+                    // Si el saldo es mayor a la extraccion pasa a realizar la extracción
                     if (cuentaBancaria.Saldo >= montoExtraccion)
                     {
                         //Realiza la extraccion restando el monto de la extraccion al saldo
@@ -89,20 +105,37 @@ namespace Back.Clases
                     else
                     {
                         // En caso de que no haya saldo para la extraccion
-                        Console.WriteLine("No tenes saldo, seco");
+                        throw new InvalidOperationException("Saldo insuficiente en la cuenta de origen para la extracción.");
                     }
                 }
             }
         }
 
-        public void RealizarTransferencia(int cuenaOrigenId, int cuentaDestinoId, decimal montoTransferencia)
+        public void RealizarTransferencia(int cuentaOrigenId, int cuentaDestinoId, decimal montoTransferencia)
         {
             using (var context = new ApplicationDbContext())
             {
-                cuentaOrigenid.Saldo -= montoTransferencia;
-                
-                cuentaDestinoId.Saldo += montoTransferencia;
-                context.SaveChanges();
+                var cuentaOrigen = context.CuentasBancarias.FirstOrDefault(cb => cb.IdCuenta == cuentaOrigenId);
+                var cuentaDestino = context.CuentasBancarias.FirstOrDefault(cb => cb.IdCuenta == cuentaDestinoId);
+
+                if (cuentaOrigen != null && cuentaDestino != null) //Verifica si las cuentas existen y si no son null
+                {
+                    // Verifica si el saldo de la cuenta de origen es suficiente para la transferencia
+                    if (cuentaOrigen.Saldo >= montoTransferencia)
+                    {
+                        // Realizar la transferencia restando el monto de la cuenta de origen
+                        cuentaOrigen.Saldo -= montoTransferencia;
+                        // Sumar el monto a la cuenta de destino
+                        cuentaDestino.Saldo += montoTransferencia;
+
+                        // Guardar los cambios en la base de datos
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Saldo insuficiente en la cuenta de origen para la transferencia.");
+                    }
+                }
             }
         }
 
@@ -121,7 +154,8 @@ namespace Back.Clases
                 }
                 else
                 {
-                    Console.WriteLine("La tarjeta de crédito no existe.");
+                    //Si es null, tira el mensaje de la excepcion
+                    throw new InvalidOperationException("La tarjeta de crédito no existe.");
                 }
             }
         }

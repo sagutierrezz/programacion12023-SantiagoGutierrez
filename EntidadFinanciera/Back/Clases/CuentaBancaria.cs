@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,17 +12,29 @@ namespace Back.Clases
     public class CuentaBancaria
     {
         [Key]
-        public int Id { get; set; }
+        public int IdCuenta { get; set; }
 
-        public string NumeroCuenta { get; set; }
+        public int NumeroCuenta { get; set; }
 
         public decimal Saldo { get; set; }
 
-        public TipoCuenta Tipo { get; set; }
+        public TipoCuenta TipoCuentaBancaria { get; set; }
+
+        public enum TipoCuenta
+        {
+            CajaAhorro,
+            CuentaCorriente
+        }
+
 
         public int ClienteId { get; set; } //foreign key, esta propiedad almacena el ID del cliente que es propietario de la cuenta bancaria.
         [ForeignKey("ClienteId")]
 
-        public virtual Cliente Propietario { get; set; } //propiedad de navegación que permite acceder al objeto Cliente que es el propietario de la cuenta bancaria. Cuando se recupera una instancia de CuentaBancaria de la base de datos, esta propiedad puede utilizarse para acceder al cliente propietario de esa cuenta bancaria
+
+
+        public string InformacionCuentaBancaria
+        {
+            get { return $"ID: {IdCuenta}, Numero de cuenta: {NumeroCuenta}, Saldo: {Saldo}, Tipo: {TipoCuentaBancaria}"; }
+        }
     }
 }

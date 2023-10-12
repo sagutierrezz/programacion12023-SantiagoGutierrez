@@ -21,9 +21,9 @@ namespace Back.Clases
 
         public EstadoTarjeta Estado { get; set; }
 
-        public int ClienteId { get; set; } //foreign key, esta propiedad almacena el ID del cliente que es propietario de la cuenta bancaria.
-        [ForeignKey("ClienteId")]
-        public virtual Cliente Propietario { get; set; } //propiedad de navegación que permite acceder al objeto Cliente que es el propietario de la TC. Cuando se recupera una instancia de TC de la base de datos, esta propiedad puede utilizarse para acceder al cliente propietario de la TC
+        //public int ClienteId { get; set; } //foreign key, esta propiedad almacena el ID del cliente que es propietario de la cuenta bancaria.
+        //[ForeignKey("ClienteId")]
+
     }
 
     public enum TipoCuenta

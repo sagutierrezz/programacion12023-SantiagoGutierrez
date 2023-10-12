@@ -25,7 +25,7 @@ namespace Back.Clases
             get { return $"ID: {Id}, Nombre: {Nombre}, Apellido: {Apellido}, DNI: {Dni}"; }
         }
 
-        public virtual ICollection<CuentaBancaria> CuentasBancarias { get; set; }  //crea una relación entre Cliente y CuentaBancaria 
+        //public virtual ICollection<CuentaBancaria> CuentasBancarias { get; set; }  //crea una relación entre Cliente y CuentaBancaria 
 
     }
 }

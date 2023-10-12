@@ -1,6 +1,6 @@
 ﻿namespace Front
 {
-    partial class Menu
+    partial class MenuAltaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -48,11 +48,9 @@
             textBoxDni = new TextBox();
             textBoxApellido = new TextBox();
             textBoxNombre = new TextBox();
-            textBoxIDCliente = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
             buttonEliminarCliente = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -83,6 +81,7 @@
             operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
             operacionesToolStripMenuItem.Size = new Size(106, 24);
             operacionesToolStripMenuItem.Text = "Operaciones";
+            operacionesToolStripMenuItem.Click += operacionesToolStripMenuItem_Click;
             // 
             // cuentaBancariaToolStripMenuItem
             // 
@@ -200,13 +199,6 @@
             textBoxNombre.Size = new Size(214, 27);
             textBoxNombre.TabIndex = 14;
             // 
-            // textBoxIDCliente
-            // 
-            textBoxIDCliente.Location = new Point(118, 59);
-            textBoxIDCliente.Name = "textBoxIDCliente";
-            textBoxIDCliente.Size = new Size(214, 27);
-            textBoxIDCliente.TabIndex = 13;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -234,18 +226,9 @@
             label2.TabIndex = 10;
             label2.Text = "Nombre";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(42, 61);
-            label1.Name = "label1";
-            label1.Size = new Size(24, 20);
-            label1.TabIndex = 9;
-            label1.Text = "ID";
-            // 
             // buttonEliminarCliente
             // 
-            buttonEliminarCliente.Location = new Point(740, 342);
+            buttonEliminarCliente.Location = new Point(740, 351);
             buttonEliminarCliente.Name = "buttonEliminarCliente";
             buttonEliminarCliente.Size = new Size(154, 56);
             buttonEliminarCliente.TabIndex = 18;
@@ -253,7 +236,7 @@
             buttonEliminarCliente.UseVisualStyleBackColor = true;
             buttonEliminarCliente.Click += buttonEliminarCliente_Click;
             // 
-            // Menu
+            // MenuIAltaCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -263,15 +246,13 @@
             Controls.Add(textBoxDni);
             Controls.Add(textBoxApellido);
             Controls.Add(textBoxNombre);
-            Controls.Add(textBoxIDCliente);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(listBoxClientes);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Menu";
+            Name = "MenuIAltaCliente";
             Text = "Principal";
             Load += Principal_Load;
             menuStrip1.ResumeLayout(false);
@@ -281,8 +262,6 @@
         }
 
         #endregion
-
-        private ListBox listBoxClientes;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem operacionesToolStripMenuItem;
         private ToolStripMenuItem cuentaBancariaToolStripMenuItem;
@@ -302,11 +281,10 @@
         private TextBox textBoxDni;
         private TextBox textBoxApellido;
         private TextBox textBoxNombre;
-        private TextBox textBoxIDCliente;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Label label1;
         private Button buttonEliminarCliente;
+        public ListBox listBoxClientes;
     }
 }

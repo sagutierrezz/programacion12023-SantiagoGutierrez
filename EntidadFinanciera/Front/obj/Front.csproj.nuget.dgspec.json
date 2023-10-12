@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Front\\Front.csproj": {}
+    "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Front\\Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\Back.csproj": {
+    "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\Back.csproj",
+        "projectPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\Back.csproj",
         "packagesPath": "C:\\Users\\Santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\obj\\",
+        "outputPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Front\\Front.csproj": {
+    "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Front\\Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Front\\Front.csproj",
+        "projectUniqueName": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Front\\Front.csproj",
         "projectName": "Front",
-        "projectPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Front\\Front.csproj",
+        "projectPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Front\\Front.csproj",
         "packagesPath": "C:\\Users\\Santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Front\\obj\\",
+        "outputPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Front\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -111,8 +111,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\Back.csproj": {
-                "projectPath": "C:\\Users\\Santi\\Desktop\\Guti\\Cursos\\Programacion1\\EntidadFinanciera\\Back\\Back.csproj"
+              "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\Back.csproj": {
+                "projectPath": "C:\\Users\\Santi\\Documents\\GitHub\\programacion12023-SantiagoGutierrez\\EntidadFinanciera\\Back\\Back.csproj"
               }
             }
           }

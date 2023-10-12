@@ -48,28 +48,25 @@ namespace Back.Migrations
 
             modelBuilder.Entity("Back.Clases.CuentaBancaria", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdCuenta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCuenta"));
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<string>("NumeroCuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("NumeroCuenta")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Saldo")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Tipo")
+                    b.Property<int>("TipoCuentaBancaria")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
+                    b.HasKey("IdCuenta");
 
                     b.ToTable("CuentasBancarias");
                 });
@@ -81,9 +78,6 @@ namespace Back.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
 
                     b.Property<int>("Estado")
                         .HasColumnType("int");
@@ -100,36 +94,7 @@ namespace Back.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClienteId");
-
                     b.ToTable("TarjetasCredito");
-                });
-
-            modelBuilder.Entity("Back.Clases.CuentaBancaria", b =>
-                {
-                    b.HasOne("Back.Clases.Cliente", "Propietario")
-                        .WithMany("CuentasBancarias")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Propietario");
-                });
-
-            modelBuilder.Entity("Back.Clases.TarjetaCredito", b =>
-                {
-                    b.HasOne("Back.Clases.Cliente", "Propietario")
-                        .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Propietario");
-                });
-
-            modelBuilder.Entity("Back.Clases.Cliente", b =>
-                {
-                    b.Navigation("CuentasBancarias");
                 });
 #pragma warning restore 612, 618
         }

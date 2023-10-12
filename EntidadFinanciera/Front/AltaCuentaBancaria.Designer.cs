@@ -1,6 +1,6 @@
 ﻿namespace Front
 {
-    partial class CuentaBancaria
+    partial class AltaCuentaBancaria
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,12 @@
             textBoxNumeroCuenta = new TextBox();
             textBoxSaldoCuenta = new TextBox();
             buttonCrearCuentaBancaria = new Button();
-            listBox1 = new ListBox();
+            listBoxCuentasBancarias = new ListBox();
             comboBoxTipoCuenta = new ComboBox();
             buttonVolver = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            buttonEliminarCuenta = new Button();
             SuspendLayout();
             // 
             // label1
@@ -100,35 +103,35 @@
             // 
             // buttonCrearCuentaBancaria
             // 
-            buttonCrearCuentaBancaria.Location = new Point(148, 358);
+            buttonCrearCuentaBancaria.Location = new Point(148, 350);
             buttonCrearCuentaBancaria.Name = "buttonCrearCuentaBancaria";
             buttonCrearCuentaBancaria.Size = new Size(191, 52);
             buttonCrearCuentaBancaria.TabIndex = 8;
-            buttonCrearCuentaBancaria.Text = "Crear cuenta";
+            buttonCrearCuentaBancaria.Text = "Crear cuenta bancaria";
             buttonCrearCuentaBancaria.UseVisualStyleBackColor = true;
             buttonCrearCuentaBancaria.Click += button1_Click;
             // 
-            // listBox1
+            // listBoxCuentasBancarias
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(402, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(386, 364);
-            listBox1.TabIndex = 9;
+            listBoxCuentasBancarias.FormattingEnabled = true;
+            listBoxCuentasBancarias.ItemHeight = 20;
+            listBoxCuentasBancarias.Location = new Point(402, 12);
+            listBoxCuentasBancarias.Name = "listBoxCuentasBancarias";
+            listBoxCuentasBancarias.Size = new Size(558, 364);
+            listBoxCuentasBancarias.TabIndex = 9;
             // 
             // comboBoxTipoCuenta
             // 
             comboBoxTipoCuenta.FormattingEnabled = true;
-            comboBoxTipoCuenta.Items.AddRange(new object[] { "Caja de ahorro", "Cuenta corriente" });
             comboBoxTipoCuenta.Location = new Point(148, 276);
             comboBoxTipoCuenta.Name = "comboBoxTipoCuenta";
             comboBoxTipoCuenta.Size = new Size(194, 28);
             comboBoxTipoCuenta.TabIndex = 10;
+            comboBoxTipoCuenta.SelectedIndexChanged += comboBoxTipoCuenta_SelectedIndexChanged;
             // 
             // buttonVolver
             // 
-            buttonVolver.Location = new Point(657, 394);
+            buttonVolver.Location = new Point(808, 385);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(131, 53);
             buttonVolver.TabIndex = 11;
@@ -136,14 +139,45 @@
             buttonVolver.UseVisualStyleBackColor = true;
             buttonVolver.Click += buttonVolver_Click;
             // 
-            // CuentaBancaria
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(121, 12);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 20);
+            label5.TabIndex = 12;
+            label5.Text = "labelNombre";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(240, 12);
+            label6.Name = "label6";
+            label6.Size = new Size(99, 20);
+            label6.TabIndex = 13;
+            label6.Text = "labelApellido";
+            // 
+            // buttonEliminarCuenta
+            // 
+            buttonEliminarCuenta.Location = new Point(555, 387);
+            buttonEliminarCuenta.Name = "buttonEliminarCuenta";
+            buttonEliminarCuenta.Size = new Size(140, 51);
+            buttonEliminarCuenta.TabIndex = 14;
+            buttonEliminarCuenta.Text = "Eliminar cuenta bancaria";
+            buttonEliminarCuenta.UseVisualStyleBackColor = true;
+            buttonEliminarCuenta.Click += buttonEliminarCuenta_Click;
+            // 
+            // AltaCuentaBancaria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(972, 450);
+            Controls.Add(buttonEliminarCuenta);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(buttonVolver);
             Controls.Add(comboBoxTipoCuenta);
-            Controls.Add(listBox1);
+            Controls.Add(listBoxCuentasBancarias);
             Controls.Add(buttonCrearCuentaBancaria);
             Controls.Add(textBoxSaldoCuenta);
             Controls.Add(textBoxNumeroCuenta);
@@ -152,8 +186,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "CuentaBancaria";
+            Name = "AltaCuentaBancaria";
             Text = "CuentaBancaria";
+            Load += CuentaBancaria_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,8 +203,11 @@
         private TextBox textBoxNumeroCuenta;
         private TextBox textBoxSaldoCuenta;
         private Button buttonCrearCuentaBancaria;
-        private ListBox listBox1;
+        private ListBox listBoxCuentasBancarias;
         private ComboBox comboBoxTipoCuenta;
         private Button buttonVolver;
+        private Label label5;
+        private Label label6;
+        private Button buttonEliminarCuenta;
     }
 }
